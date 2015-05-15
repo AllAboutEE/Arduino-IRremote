@@ -6,7 +6,7 @@
  * http://arcfn.com
  */
 
-#include <IRremote.h>
+#include <Shirriff_IRremote.h>
 
 int RECV_PIN = 11;
 

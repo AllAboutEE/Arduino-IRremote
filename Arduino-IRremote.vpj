@@ -1,0 +1,195 @@
+<!DOCTYPE Project SYSTEM "http://www.slickedit.com/dtd/vse/10.0/vpj.dtd">
+<Project
+	Version="10.0"
+	VendorName="SlickEdit"
+	TemplateName="Other C/C++"
+	WorkingDir=".">
+	<Config
+		Name="Debug"
+		Type="cpp"
+		DebugCallbackName="gdb"
+		OutputFile="%bdArduino-IRremote"
+		CompilerConfigName="Latest Version">
+		<Menu>
+			<Target
+				Name="Compile"
+				MenuCaption="&amp;Compile"
+				CaptureOutputWith="ProcessBuffer"
+				OutputExts="*.o"
+				SaveOption="SaveCurrent"
+				RunFromDir="%rw">
+				<Exec CmdLine='cc -c -g %i %defd -o "%bd%n.o" "%f"'/>
+			</Target>
+			<Target
+				Name="Link"
+				MenuCaption="&amp;Link">
+				<Exec CmdLine='cc -g -o "%o" %f %libs'/>
+			</Target>
+			<Target
+				Name="Build"
+				MenuCaption="&amp;Build"
+				CaptureOutputWith="ProcessBuffer"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" build "%w" "%r"'/>
+			</Target>
+			<Target
+				Name="Rebuild"
+				MenuCaption="&amp;Rebuild"
+				CaptureOutputWith="ProcessBuffer"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" rebuild "%w" "%r"'/>
+			</Target>
+			<Target
+				Name="Debug"
+				MenuCaption="&amp;Debug"
+				SaveOption="SaveNone"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				RunFromDir="%rw">
+				<Exec CmdLine='vsdebugio -prog "%o"'/>
+			</Target>
+			<Target
+				Name="Execute"
+				MenuCaption="E&amp;xecute"
+				SaveOption="SaveNone"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%o"'/>
+			</Target>
+		</Menu>
+	</Config>
+	<Config
+		Name="Release"
+		Type="cpp"
+		DebugCallbackName="gdb"
+		OutputFile="%bdArduino-IRremote"
+		CompilerConfigName="Latest Version">
+		<Menu>
+			<Target
+				Name="Compile"
+				MenuCaption="&amp;Compile"
+				CaptureOutputWith="ProcessBuffer"
+				SaveOption="SaveCurrent"
+				OutputExts="*.o"
+				RunFromDir="%rw">
+				<Exec CmdLine='cc -c -O %i %defd -o "%bd%n.o" "%f"'/>
+			</Target>
+			<Target
+				Name="Link"
+				MenuCaption="&amp;Link">
+				<Exec CmdLine='cc -O -o "%o" %f %libs'/>
+			</Target>
+			<Target
+				Name="Build"
+				MenuCaption="&amp;Build"
+				CaptureOutputWith="ProcessBuffer"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" build "%w" "%r"'/>
+			</Target>
+			<Target
+				Name="Rebuild"
+				MenuCaption="&amp;Rebuild"
+				CaptureOutputWith="ProcessBuffer"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" rebuild "%w" "%r"'/>
+			</Target>
+			<Target
+				Name="Debug"
+				MenuCaption="&amp;Debug"
+				SaveOption="SaveNone"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				RunFromDir="%rw">
+				<Exec CmdLine='vsdebugio -prog "%o"'/>
+			</Target>
+			<Target
+				Name="Execute"
+				MenuCaption="E&amp;xecute"
+				SaveOption="SaveNone"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%o"'/>
+			</Target>
+		</Menu>
+	</Config>
+	<Rules Name="Compile">
+		<Rule
+			InputExts="*.s"
+			OutputExts="*.o"
+			LinkObject="1">
+			<Exec CmdLine='as -o "%bd%n.o" "%f"'/>
+		</Rule>
+	</Rules>
+	<Files>
+		<Folder
+			Name="Source Files"
+			Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d;*.m;*.mm;*.go">
+			<F N="IRremote.cpp"/>
+			<F N="remote_types/Shirriff_AiwaRCT501.cpp"/>
+			<F N="remote_types/Shirriff_DISH.cpp"/>
+			<F N="Shirriff_IRremote.cpp"/>
+			<F N="remote_types/Shirriff_JVC.cpp"/>
+			<F N="remote_types/Shirriff_MITSUBISHI.cpp"/>
+			<F N="remote_types/Shirriff_NEC.cpp"/>
+			<F N="remote_types/Shirriff_PANASONIC.cpp"/>
+			<F N="remote_types/Shirriff_RAW.cpp"/>
+			<F N="remote_types/Shirriff_RC5.cpp"/>
+			<F N="remote_types/Shirriff_RC6.cpp"/>
+			<F N="remote_types/Shirriff_SAMSUNG.cpp"/>
+			<F N="remote_types/Shirriff_SANYO.cpp"/>
+			<F N="remote_types/Shirriff_SHARP.cpp"/>
+			<F N="remote_types/Shirriff_SONY.cpp"/>
+			<F N="remote_types/Shirriff_WHYNTER.cpp"/>
+		</Folder>
+		<Folder
+			Name="Header Files"
+			Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.inc;*.sh;*.cpy;*.if">
+			<F N="IRremote.h"/>
+			<F N="IRremoteInt.h"/>
+			<F N="remote_types/Shirriff_AiwaRCT501.h"/>
+			<F N="Shirriff_Decode_Results.h"/>
+			<F N="remote_types/Shirriff_DISH.h"/>
+			<F N="Shirriff_IRrecv.h"/>
+			<F N="Shirriff_IRremote.h"/>
+			<F N="Shirriff_IRremoteInt.h"/>
+			<F N="Shirriff_IRsend.h"/>
+			<F N="remote_types/Shirriff_JVC.h"/>
+			<F N="remote_types/Shirriff_MITSUBISHI.h"/>
+			<F N="remote_types/Shirriff_NEC.h"/>
+			<F N="remote_types/Shirriff_PANASONIC.h"/>
+			<F N="remote_types/Shirriff_RAW.h"/>
+			<F N="remote_types/Shirriff_RC5.h"/>
+			<F N="remote_types/Shirriff_RC6.h"/>
+			<F N="remote_types/Shirriff_SAMSUNG.h"/>
+			<F N="remote_types/Shirriff_SANYO.h"/>
+			<F N="remote_types/Shirriff_SHARP.h"/>
+			<F N="remote_types/Shirriff_SONY.h"/>
+			<F N="remote_types/Shirriff_WHYNTER.h"/>
+		</Folder>
+		<Folder
+			Name="Resource Files"
+			Filters="*.ico;*.cur;*.dlg"/>
+		<Folder
+			Name="Bitmaps"
+			Filters="*.bmp"/>
+		<Folder
+			Name="Other Files"
+			Filters="*.ino;*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d;*.m;*.mm;*.go">
+			<F N="examples/AiwaRCT501SendDemo/AiwaRCT501SendDemo.ino"/>
+			<F N="examples/IRrecord/IRrecord.ino"/>
+			<F N="examples/IRrecvDemo/IRrecvDemo.ino"/>
+			<F N="examples/IRrecvDump/IRrecvDump.ino"/>
+			<F N="examples/IRrelay/IRrelay.ino"/>
+			<F N="examples/IRsendDemo/IRsendDemo.ino"/>
+			<F N="examples/IRtest/IRtest.ino"/>
+			<F N="examples/IRtest2/IRtest2.ino"/>
+			<F N="examples/JVCPanasonicSendDemo/JVCPanasonicSendDemo.ino"/>
+		</Folder>
+	</Files>
+</Project>

@@ -8,7 +8,7 @@
  * LG added by Darryl Smith (based on the JVC protocol)
  */
 
-#include <IRremote.h>
+#include <Shirriff_IRremote.h>
 
 int RECV_PIN = 11;
 

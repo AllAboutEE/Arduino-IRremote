@@ -1,0 +1,25 @@
+[Global]
+CurrentProject=Arduino-IRremote.vpj
+[ProjectDates]
+Arduino-IRremote.vpj=20150514203238734
+[ActiveConfig]
+Arduino-IRremote.vpj=Debug
+[State]
+SCREEN: 1366 768 -1698 -92 1611 698 0 0 M 0 0 0 0 1671 700 0
+CWD: examples\IRrecvDemo
+FILEHIST: 9
+remote_types\Shirriff_WHYNTER.h
+Shirriff_IRremoteInt.h
+Shirriff_IRremote.h
+remote_types\Shirriff_AiwaRCT501.h
+remote_types\Shirriff_AiwaRCT501.cpp
+remote_types\Shirriff_DISH.h
+Shirriff_IRsend.h
+examples\AiwaRCT501SendDemo\AiwaRCT501SendDemo.ino
+examples\IRrecvDemo\IRrecvDemo.ino
+TBCLASS: 0 0
+DEBUG: 0 0 0 0 3 0 gdb
+printf
+strcpy
+std::*
+DEBUG2: 0

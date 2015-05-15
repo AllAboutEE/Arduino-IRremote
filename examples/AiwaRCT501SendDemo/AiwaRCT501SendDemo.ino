@@ -6,12 +6,13 @@
  * http://arcfn.com
  */
 
-#include "IRremote.h"
+#include <Shirriff_AiwaRCT501.h>
 
 #define POWER 0x7F80
-#define AIWA_RC_T501
 
-IRsend irsend;
+using namespace Shirriff;
+
+AiwaRCT501 irremote;
 
 void setup() {
   Serial.begin(9600);
@@ -20,7 +21,8 @@ void setup() {
 
 void loop() {
   if (Serial.read() != -1) {
-    irsend.sendAiwaRCT501(POWER);
+    irremote.send(POWER);
+ 
     delay(60); // Optional
   }
 }
